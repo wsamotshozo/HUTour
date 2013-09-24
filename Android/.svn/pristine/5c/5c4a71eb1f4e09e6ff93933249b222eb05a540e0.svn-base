@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/pic"
+        android:layout_width="fill_parent"
+        android:layout_height="250dp"
+        android:src="@drawable/hu1" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" 
+            android:orientation="vertical"
+            android:layout_weight="1.0" >
+
+            <Button
+                android:id="@+id/res"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Residence Life"/>
+
+            <Button
+                android:id="@+id/tra"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Traditions"  />
+
+                    </LinearLayout>
+      <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:layout_weight="1.0" >
+
+          <Button
+              android:id="@+id/spo"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="Sports"/>
+
+          <Button
+              android:id="@+id/clu"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="Clubs"/>
+
+    </LinearLayout>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

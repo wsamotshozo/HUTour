@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, TourHowardActivity!</string>
+    <string name="app_name">TourHoward</string>
+    <string-array name="SouthPlaces">
+        <item >Howard University Hospital</item>
+        <item >Howard Plaza East Towers</item>
+        <item >Howard Plaza West Towers</item>
+        <item >College of Medicine</item>
+        <item >Colleg of Dentistry</item>
+        <item >College of Nursing and Allied Health</item>
+        <item >Howard University Book Store</item>
+        <item >Career Service Center</item>
+    </string-array>
+    <string name="Football">The Howard University football team opens up the school year with its power and dominance that overtakes Greene Stadium in the fall season. In these autumn months, the football team goes through strenuous practices and conditioning in order to give Howard students and alum a show every Saturday afternoon. The highlight of the football season comes when Howard hosts its annual homecoming game, with appearances by many local and national celebrities.</string>
+    <string-array name="Organizations">
+        <item >Bison Yearbook</item>
+        <item >College of Arts and Sciences Student Council</item>
+        <item >College of Engineering, Architecture, and Computer Sciences Council</item>
+        <item >College of Medicine Student Council</item>
+        <item >College of Pharmacy, Nursing and Allied Health</item>
+        <item >Homecoming Steering Committee</item>
+        <item >Howard University Student Association</item>
+        <item >Howard University School of Divinity</item>
+        <item >School of Business Student Council</item>
+        <item >School of Communications Student Council</item>
+        <item >School of Education Student Council</item>
+        <item >Social Work Student Council</item>
+        <item >Gradute Student Assembly</item>
+        <item >Graduate School Student Council</item>
+        <item >Graduate Business Student Council</item>
+        <item >Undergraduate Student Assembly</item>
+        <item >Graduate Student Professional Council</item>
+    </string-array>
+    <string-array name="Sections">
+        <item >Main Campus North</item>
+        <item >Main Campus South</item>
+      	<item >Main Campus Center</item>
+        <item >Main Campus  East</item>
+        <item >Main Campus  West</item>
+      	<item >School of Law</item>
+      	<item >School of Divinity</item>
+    </string-array>
+    <string-array name="MCNORTH">
+        <item >Drew Hall</item>
+        <item >Burr Gymnasium</item>
+      	<item >Greene Memorial Stadium</item>
+        <item >Crampton Auditorium</item>
+        <item >School of Business</item>
+      	<item >Blackburn Center</item>
+      	<item >Locke Hall</item>
+      	<item >Mordecai Johnson Administration Building</item>
+      	<item >Childers Hall</item>
+      	<item >School of Education</item>
+      	<item >Miner Hall</item>
+      	<item >Lindsay Hall</item>
+      	<item >Howard Manor</item>
+      	<item >Effingham Apartments</item>
+      	<item >Ira Aldridge Theatre</item>
+      	<item >Howard Hall</item>
+      	<item >Middle School</item>
+      	<item >Douglass Hall</item>
+      	<item >Center for Academic Reinforcement</item>
+      	<item >Main Gate</item>
+    </string-array>
+    <string-array name="MCSOUTH">
+        <item >Frazier Hall</item>
+        <item >Bethune Annex</item>
+        <item >Graduate School</item>
+        <item >WHUT-TV</item>
+        <item >WHUR-Radio</item>
+        <item >Mental Health Center</item>
+        <item >Ralph J Bunche Center</item>
+        <item >Power Plant</item>
+        <item >Just Hall</item>
+        <item >Engineering building</item>
+        <item >ISAS</item>
+        <item >Ilab</item>
+        <item >Student Health Center</item>
+        <item >HU Bookstore</item>
+        <item >Health Science Library</item>
+        <item >School of Nursing and Allied Health</item>
+      	<item >Howard Center</item>
+        <item >Hospital Service Center</item>
+        <item >College of Dentistry</item>
+      	<item >College of Medicine</item>
+      	<item >HU Hospital</item>
+    </string-array>
+    <string-array name="MCCENTER">
+        <item >Lindsay Hall</item>
+        <item >Mackey Building</item>
+      	<item >Engineering Building</item>
+        <item >ISAS</item>
+        <item >Ilab</item>
+      	<item >Ralph J Bunche Center</item>
+      	<item >Power Plant</item>
+      	<item >WHUR-Radio</item>
+      	<item >WHUT-TV</item>
+      	<item >Wheatley Hall</item>
+      	<item >Locke Hall</item>
+      	<item >School of Education</item>
+      	<item >Childers Hall</item>
+      	<item >Center for Academic Reinforcement</item>
+      	<item >Blackburn Center</item>
+      	<item >Cramton Auditorium </item>
+      	<item >School of Business</item>
+      	<item >Miner Hall</item>
+      	<item >Howard Hall</item>
+      	<item >Mordecai Johnson Administration Building</item>
+    </string-array>
+    <string-array name="MCEAST">
+        <item >Frazier Hall</item>
+        <item >Baldwin Hall</item>
+        <item >Wheatley Hall</item>
+        <item >Truth Hall</item>
+        <item >Crandall Hall</item>
+        <item >Tubman Quadrangle</item>
+        <item >Middle school</item>
+        <item >Just Hall</item>
+        <item >WHUT-TV</item>
+        <item >WHUR-Radio</item>
+        <item >Howard Playground</item>
+        <item >School of Education</item>
+        <item >Locke Hall</item>
+        <item >Founders Library-UGL</item>
+        <item >Founders Library-MSRC</item>
+        <item >Rankin Chapel</item>
+        <item >Thirkield Hall</item>
+        <item >Chemistry Building</item>
+        <item >School of Pharmacy</item>
+        <item >Laser Chemistry Building</item>
+        <item >Carnegie Hall</item>
+        <item >School of Nursing and Allied Health</item>
+    </string-array>
+    <string-array name="MCWEST">
+        <item >Howard Plaza East Towers</item>
+        <item >Howard Plaza West Towers</item>
+      	<item >Hospital Service Center</item>
+        <item >HU Book Store</item>
+        <item >Howard Center</item>
+      	<item >ISAS</item>
+      	<item >Ilab</item>
+      	<item >Engineering Building</item>
+      	<item >Student Health Center</item>
+    </string-array>
+    <string-array name="SOLAW">
+      	<item >School of Law</item>
+      	<item >Law Library</item>
+    </string-array>
+    <string-array name="SODIV">
+        <item >School of Divinity</item>
+    </string-array>
+    <string-array name="Show">
+        <item >None</item>
+        <item >Parking</item>
+        <item >Athletics Facilities</item>
+        <item >Libraries</item>
+        <item >Residence Halls</item>
+        <!--  <item >Emergency Phone Towers</item>-->
+    </string-array>
+    <integer-array name="Athletic">
+        <item >38925574</item><item >-77020859</item><!-- Greene Stadium -->
+        <item >38926520</item><item >-77022194</item><!-- Burr Gym -->
+        <item >38917931</item><item >-77015005</item><!-- Carver Hall Gym -->
+    </integer-array>
+    <integer-array name="Libraries">
+        <item >38919804</item><item >-77018702</item><!-- Health Science library -->
+        <item >38922287</item><item >-77018981</item><!-- UGL -->
+        <item >38922350</item><item >-77019673</item><!-- Graduate Library -->
+        <!-- architecture library -->
+        <!-- Engineering library -->
+    </integer-array>
+    <!-- source for parking  -->
+    <!-- http://auxiliary.howard.edu/parking-lot-locations.html -->
+    <integer-array name="Parking">
+        <item >38924611</item><item >-77020114</item><!-- A -->
+        <item >38918559</item><item >-77020999</item><!-- Hospital parking -->
+        <item >38920379</item><item >-77025532</item><!-- AA -->
+        <item >38919285</item><item >-77021573</item><!-- Bookstore -->
+    </integer-array>
+    <integer-array name="Residence">
+        <item >38925386</item><item >-77021721</item><!-- Cook Hall -->
+        <item >38927321</item><item >-77020970</item><!-- Drew Hall -->
+        <item >38920666</item><item >-77017506</item><!-- Bethune Annex -->
+        <item >38922398</item><item >-77017847</item><!-- Wheatly Hall -->
+        <item >38922250</item><item >-77017330</item><!-- Truth Hall -->
+        <item >38921959</item><item >-77017928</item><!-- Baldwin Hall -->
+        <item >38921766</item><item >-77017256</item><!-- Crandall Hall -->
+        <item >38921573</item><item >-77017689</item><!-- Frazier Hall -->
+        <item >38917931</item><item >-77015005</item><!-- Carver Hall -->
+        <item >38916841</item><item >-77015528</item><!-- Slow Hall -->    
+        <item >38939583</item><item >-76982767</item><!-- Mays Hall -->
+        <item >38923626</item><item >-77035982</item><!-- Meridian -->
+        <item >38920439</item><item >-77023521</item><!-- East Towers-->
+        <item >38920343</item><item >-77024505</item><!-- West Towers -->
+    </integer-array>
+    <integer-array name="Standard">
+        <item >38923111</item><item >-77021292</item><!-- Mordecai Admin building -->
+        <item >38924447</item><item >-77021474</item><!-- School of B-->
+        <item >38924964</item><item >-77021549</item><!-- Cook Hall -->
+        <item >38924973</item><item >-77021270</item><!-- Greene Stadium 1 -->
+        <item >38925882</item><item >-77021453</item><!-- Greene Stadium 2 -->
+        <item >38926275</item><item >-77021667</item><!-- Burr -->
+        <item >38924455</item><item >-77021174</item><!-- Cramton -->
+        <item >38924105</item><item >-77021110</item><!-- Ira -->
+        <item >38924071</item><item >-77020616</item><!-- Childers -->
+        <item >38923670</item><item >-77020584</item><!-- douglass -->
+        <item >38923779</item><item >-77019608</item><!-- blackburn -->
+    </integer-array>
+
+</resources>

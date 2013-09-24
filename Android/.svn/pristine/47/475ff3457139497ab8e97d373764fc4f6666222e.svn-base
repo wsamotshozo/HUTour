@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name = "narr">
+		<item>Mordecai Wyatt Johnson was Howards first black President.</item>
+		<item>the School of Business is the newest academic building on campus.</item>
+		<item>George W. Cook was born a slave, but came to Howard and earned a Bachelor of Arts degree in 1881.</item>
+		<item>Howard Universitys Greene Stadium is known for its late night soccer games, afternoon lacrosse games and Saturday football games.</item>
+		<item>Named for Louis Cramton,  a former Congressional Representative from Michigan who played an instrumental role in gaining the passage of an Act of Congress authorizing federal appropriations to the University</item>
+		<item>Drew_Hall</item>
+		<item>Cook_Hall</item>
+		<item>East_Towers_Plaza</item>
+		<item>West_Towers_Plaza</item>
+		<item>Health_Science_Library</item>
+		<item>Graduate_Library</item>
+		<item>Undergraduate_Library</item>
+		<item>Thirkield_Hall</item>
+		<item>Chemical_Engineering_Building</item>
+		<item>Bunche_Center</item>
+		<item>Power_Plant</item>
+		<item>Rankin_Chapel</item>
+		<item>Blackburn_Center</item>
+		<item>Burr_Gymnasium</item>
+		<item>Lindsay_Hall</item>
+		<item>Mordecai_Admin_Building</item>
+		<item>Howard_Hall</item>
+		<item>Howard_Manor</item>
+		<item>Effingham_Apartments</item>
+	</string-array >
+</resources>

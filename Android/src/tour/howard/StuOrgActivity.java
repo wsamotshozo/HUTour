@@ -1,0 +1,47 @@
+package tour.howard;
+
+
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.View.OnTouchListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.maps.GeoPoint;
+import com.google.android.maps.MapActivity;
+import com.google.android.maps.MapController;
+import com.google.android.maps.MapView;
+import com.google.android.maps.OverlayItem;
+//show a list of student organizations and link to websites
+public class StuOrgActivity extends Activity {
+
+
+
+	public void onCreate(Bundle bundle) {
+		super.onCreate(bundle);
+		ListView places = new ListView(this.getBaseContext());
+		String [] values = getResources().getStringArray(R.array.Organizations);
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,android.R.id.text1,values);
+		places.setAdapter(adapter);
+		setContentView(places);
+	}
+
+}
+

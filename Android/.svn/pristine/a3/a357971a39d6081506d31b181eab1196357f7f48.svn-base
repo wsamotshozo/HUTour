@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+   	<string-array name = "busRoutes">
+   	    <item>Divinity</item>
+   		<item>Law</item>
+		<item>North</item>
+		<item>North Express</item>
+		<item>South</item>
+		<item>South Express</item>
+		<item>Summer</item>
+		<item>UTC Towers</item>
+		<item>Weekend</item>
+	</string-array>
+	<integer-array name = "south">
+	    <item>38927228</item>		<item>-77020463</item>
+	    <item>38926498</item>		<item>-77020329</item>
+	    <item>38925805</item>		<item>-77020013</item>
+	    <item>38924666</item>		<item>-77019010</item>
+	    <item>38924215</item>		<item>-77018479</item>
+	    <item>38923856</item>		<item>-77018264</item>
+	    <item>38923501</item>		<item>-77018232</item>
+	    <item>38922696</item>		<item>-77018339</item>		
+		<item>38917351</item>		<item>-77017564</item>
+		<item>38917500</item>		<item>-77015963</item>
+		<item>38916106</item>		<item>-77015775</item>
+		<item>38916064</item>		<item>-77015587</item>
+		<item>38915922</item>		<item>-77015480</item>
+		<item>38915780</item>		<item>-77015566</item>
+		<item>38915726</item>		<item>-77015748</item>
+		<item>38915797</item>		<item>-77015925</item>
+		<item>38915934</item>		<item>-77015979</item>
+		<item>38916030</item>		<item>-77015949</item>
+		<item>38916089</item>		<item>-77015861</item>
+		<item>38916106</item>		<item>-77015775</item>
+		<item>38917500</item>		<item>-77015963</item>
+		<item>38917635</item>		<item>-77014571</item>
+		<item>38920665</item>		<item>-77014938</item>
+		<item>38920359</item>		<item>-77018031</item>
+		<item>38914240</item>		<item>-77017127</item>
+		<item>38914104</item>		<item>-77017500</item>
+		<item>38914092</item>		<item>-77021931</item>
+		<item>38917020</item>		<item>-77021901</item>
+		<item>38917101</item>		<item>-77020949</item>
+		<item>38917870</item>		<item>-77021061</item>
+		<item>38917800</item>		<item>-77021893</item>
+		<item>38919006</item>		<item>-77021906</item>
+		<item>38919369</item>		<item>-77017878</item>
+		<item>38919006</item>		<item>-77021906</item>
+		<item>38919987</item>		<item>-77021928</item>
+		<item>38920359</item>		<item>-77018031</item>
+		<item>38919987</item>		<item>-77021928</item>
+		<item>38922333</item>		<item>-77022260</item>
+		<item>38922440</item>		<item>-77021070</item>
+		<item>38924912</item>		<item>-77021483</item>
+		<item>38924803</item>		<item>-77022609</item>
+		<item>38922333</item>		<item>-77022260</item>
+		<item>38924803</item>		<item>-77022609</item>
+		<item>38927224</item>		<item>-77022963</item>
+		<item>38927345</item>		<item>-77022572</item>
+		<item>38927529</item>		<item>-77020506</item>
+		<item>38927228</item>		<item>-77020463</item>
+	</integer-array > 
+</resources>

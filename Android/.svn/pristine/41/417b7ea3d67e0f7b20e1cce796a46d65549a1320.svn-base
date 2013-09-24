@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+ <Gallery 
+    android:id="@+id/Gallery" 
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content"></Gallery>
+
+         
+
+
+   <ViewSwitcher
+       android:id="@+id/Control"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content" >
+       <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+       <ImageView android:id="@+id/Image" 
+    android:layout_width="wrap_content" 
+    android:layout_height="300dp"/>
+
+    </LinearLayout>
+    
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    <com.google.android.maps.MapView
+	android:layout_width="fill_parent"
+	android:layout_height="300dp"
+	android:id="@+id/map"
+	android:clickable="true"
+	android:apiKey="0WkC5ANoCR9utisPeoO17OlP7TxcKAFwQovvgiQ"/>
+    </LinearLayout>
+    
+   </ViewSwitcher>
+   
+      <Button
+            android:id="@+id/show"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Show" />
+
+<TextView
+    android:id="@+id/Directions"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:text="" />
+
+</LinearLayout>

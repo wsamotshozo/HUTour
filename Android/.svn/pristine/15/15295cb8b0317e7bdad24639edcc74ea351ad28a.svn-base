@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:orientation="horizontal">
+    
+    <Button
+            android:id="@+id/tour"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Take a Tour"
+            android:layout_weight="1.0"/>
+    <Button
+            android:id="@+id/show"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Show Me"
+            android:layout_weight="1.0"/>
+    <Button
+            android:id="@+id/high"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Highlight" 
+            android:layout_weight="1.0"/>
+   
+    
+    </LinearLayout>
+     <Spinner
+            android:id="@+id/sect"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Section" />
+    
+    <com.google.android.maps.MapView
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:id="@+id/map"
+	android:clickable="true"
+	android:apiKey="0WkC5ANoCR9utisPeoO17OlP7TxcKAFwQovvgiQ"/>
+    
+</LinearLayout>

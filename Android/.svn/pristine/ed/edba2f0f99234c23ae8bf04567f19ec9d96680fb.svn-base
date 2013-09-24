@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, TourHowardActivity!</string>
+    <string name="app_name">Howard University</string>
+    <string name="Football">The Howard University football team opens up the school year with its power and dominance that overtakes Greene Stadium in the fall season. In these autumn months, the football team goes through strenuous practices and conditioning in order to give Howard students and alum a show every Saturday afternoon. The highlight of the football season comes when Howard hosts its annual homecoming game, with appearances by many local and national celebrities.</string>
+    <string-array name="Organizations">
+        <item >Bison Yearbook</item>
+        <item >College of Arts and Sciences Student Council</item>
+        <item >College of Engineering, Architecture, and Computer Sciences Council</item>
+        <item >College of Medicine Student Council</item>
+        <item >College of Pharmacy, Nursing and Allied Health</item>
+        <item >Homecoming Steering Committee</item>
+        <item >Howard University Student Association</item>
+        <item >Howard University School of Divinity</item>
+        <item >School of Business Student Council</item>
+        <item >School of Communications Student Council</item>
+        <item >School of Education Student Council</item>
+        <item >Social Work Student Council</item>
+        <item >Gradute Student Assembly</item>
+        <item >Graduate School Student Council</item>
+        <item >Graduate Business Student Council</item>
+        <item >Undergraduate Student Assembly</item>
+        <item >Graduate Student Professional Council</item>
+    </string-array>
+    <string-array name="Sections">
+        <item >Main Campus North</item>
+        <item >Main Campus South</item>
+      	<item >Main Campus Center</item>
+        <item >Main Campus  East</item>
+        <item >Main Campus  West</item>
+      	<item >School of Law</item>
+      	<item >School of Divinity</item>
+    </string-array>
+    <string-array name="Show">
+        <item >None</item>
+        <item >Parking</item>
+        <item >Athletics Facilities</item>
+        <item >Libraries</item>
+        <item >Residence Halls</item>
+        <item >Restaurants</item>
+        <!--  <item >Emergency Phone Towers</item>-->
+    </string-array>
+    <string-array name="ResImage">
+        <item >http://marketingfaq.net/wp-content/uploads/2012/01/McDonalds-Logo.png</item><!-- MCDonalds -->
+        <item >http://subwaylg.com/images/subway_333733353334_89_logo.jpg</item><!-- Subway -->
+        <item >http://www.downtowndc.org/_files//images/potbelly.jpg</item><!-- Potbelly -->
+        <item >http://hollywoodandswine.com/wp-content/uploads/2012/03/Starbucks-2.jpg</item><!-- Starbucks -->
+        <item >http://www.kabob-corner.com/logo.png</item><!-- Kabob -->
+        <item >http://www.negrileats.com/images/logo2.gif</item><!-- Negril -->
+        <item ></item><!-- China Wonder-->
+        <item >http://s3.amazonaws.com/mxassets.metromix.com/photos/attachments/6768/medium/dc_venue_413050.jpg?1325781388</item><!-- Howard China-->
+        <item >http://admin.utep.edu/Portals/66/STGRoundLogo_RGB.jpg</item><!-- simply to go -->
+        <item >http://restaurantnews.com/wp-content/uploads/2011/01/Jazzmans-Cafe-Bakery.jpg</item><!-- Jazzman's cafe and bakery -->
+    </string-array>
+</resources>

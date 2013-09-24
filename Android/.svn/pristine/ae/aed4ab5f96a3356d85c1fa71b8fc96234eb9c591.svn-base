@@ -1,0 +1,212 @@
+package tour.howard;
+
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.graphics.drawable.Drawable;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.WindowManager;
+import android.view.View.OnClickListener;
+import android.view.View.OnTouchListener;
+import android.view.ViewGroup.LayoutParams;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.Spinner;
+import android.widget.Toast;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.AdapterView.OnItemSelectedListener;
+
+import com.google.android.maps.GeoPoint;
+import com.google.android.maps.MapActivity;
+import com.google.android.maps.MapController;
+import com.google.android.maps.MapView;
+import com.google.android.maps.OverlayItem;
+
+
+
+public class HUMap extends MapActivity implements OnClickListener, OnItemSelectedListener{
+	private WindowManager wm;
+	private MapView mapView;
+	private MapController mapController;
+	private Button standard,showme,highlight;
+	private Spinner section;
+	private AlertDialog alert;
+	private MyOverlays landmarks, URH;
+	
+	@SuppressWarnings("deprecation")
+	public void onCreate(Bundle bundle) {
+		super.onCreate(bundle);
+		setContentView(R.layout.map); // bind the layout to the activity
+		
+		//set the map 
+		mapView = (MapView)findViewById(R.id.map);
+		mapView.setBuiltInZoomControls(true);
+		mapView.setSatellite(false);
+		mapView.setTraffic(false);
+		mapView.setStreetView(true);
+		mapController = mapView.getController();
+		mapController.setZoom(18);
+		
+		section = (Spinner)findViewById(R.id.sect);
+		String[] values = getResources().getStringArray(R.array.Sections);
+		ArrayAdapter<String> views = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,values);
+		section.setAdapter(views);
+		section.setOnItemSelectedListener(this);
+		
+		CenterMap();
+		
+		standard = (Button) findViewById(R.id.tour);
+		standard.setOnClickListener(this);
+		
+		showme = (Button)findViewById(R.id.show);
+		showme.setOnClickListener(this);
+		
+		highlight = (Button)findViewById(R.id.high);
+		highlight.setOnClickListener(this);
+		
+		Drawable landmark = this.getResources().getDrawable(R.drawable.bison);
+		landmarks = new MyOverlays(landmark,this);
+		
+		
+				
+	}
+
+	@Override
+	protected boolean isRouteDisplayed() {
+		return false;
+	}
+	private void CenterMap(){
+		mapController = mapView.getController();
+		mapController.setZoom(18);
+		GeoPoint p;
+		String [] values;
+		ArrayAdapter<String> adapter;
+		switch(section.getSelectedItemPosition()){
+		case 0:p = new GeoPoint((int)(38.924932*1E6),(int)(-77.019372*1E6));
+			mapController.animateTo(p);
+			values = getResources().getStringArray(R.array.MCNORTH);
+			adapter = new ArrayAdapter<String>(getBaseContext(), android.R.layout.simple_list_item_1,android.R.id.text1,values);
+			break;
+		case 1:p = new GeoPoint((int)(38.918944*1E6),(int)(-77.019919*1E6));
+			mapController.animateTo(p);
+			values = getResources().getStringArray(R.array.MCSOUTH);
+			adapter = new ArrayAdapter<String>(getBaseContext(), android.R.layout.simple_list_item_1,android.R.id.text1,values);
+			break;
+		case 2:p = new GeoPoint((int)(38.922592*1E6),(int)(-77.020208*1E6));
+			mapController.animateTo(p);
+			values = getResources().getStringArray(R.array.MCCENTER);
+			adapter = new ArrayAdapter<String>(getBaseContext(), android.R.layout.simple_list_item_1,android.R.id.text1,values);
+			break;
+		case 3:p = new GeoPoint((int)(38.921148*1E6),(int)(-77.017730*1E6));
+			mapController.animateTo(p);
+			values = getResources().getStringArray(R.array.MCEAST);
+			adapter = new ArrayAdapter<String>(getBaseContext(), android.R.layout.simple_list_item_1,android.R.id.text1,values);
+			break;
+		case 4:p = new GeoPoint((int)(38.919094*1E6),(int)(-77.024307*1E6));
+			mapController.animateTo(p);
+			values = getResources().getStringArray(R.array.MCWEST);
+			adapter = new ArrayAdapter<String>(getBaseContext(), android.R.layout.simple_list_item_1,android.R.id.text1,values);
+			break;
+		case 5:p = new GeoPoint((int)(38.943840*1E6),(int)(-77.057995*1E6));
+			mapController.animateTo(p);
+			values = getResources().getStringArray(R.array.SOLAW);
+			adapter = new ArrayAdapter<String>(getBaseContext(), android.R.layout.simple_list_item_1,android.R.id.text1,values);
+			break;
+		case 6:p = new GeoPoint((int)(38.939843*1E6),(int)(-76.983184*1E6));
+			mapController.animateTo(p);
+			values = getResources().getStringArray(R.array.SODIV);
+			adapter = new ArrayAdapter<String>(getBaseContext(), android.R.layout.simple_list_item_1,android.R.id.text1,values);
+			break;
+		}
+	}
+	protected void onResume(){
+		super.onResume();
+	}
+
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		if(v == standard){
+			startActivity(new Intent(this,GuideActivity.class ));
+		}
+		else if(v == showme){
+			final CharSequence[] items = getResources().getStringArray(R.array.Show);
+			AlertDialog.Builder builder = new AlertDialog.Builder(this);
+			builder.setTitle("Pick a group of buildings");
+			builder.setSingleChoiceItems(items,-1,new DialogInterface.OnClickListener() {
+			    public void onClick(DialogInterface dialog, int item) {
+			    	landmarks.clear();
+					int[] data  = {};
+					switch(item){
+					case 0: break;
+					case 1:	data = getResources().getIntArray(R.array.Parking); break;
+					case 2: data = getResources().getIntArray(R.array.Athletic);break;
+					case 3: data = getResources().getIntArray(R.array.Libraries);break;
+					case 4: data = getResources().getIntArray(R.array.Residence);break;	
+					}
+					if(item!=0){
+						Toast.makeText(getApplicationContext(),
+								"Showing the  " + items[item] + " of Howard" //+ data.length
+								,Toast.LENGTH_SHORT).show();
+						int i  =0;
+						while( i < data.length){
+							GeoPoint w = new GeoPoint(data[i],data[i+1]);
+							landmarks.addOverlay(new OverlayItem(w,"",""));
+							i+=2;
+							
+						}
+						mapView.getOverlays().add(landmarks);
+						mapView.invalidate();
+					}
+					else{
+						Toast.makeText(getApplicationContext(),"Nothing selected",Toast.LENGTH_SHORT).show();
+					}
+			    }
+			});
+			builder.setPositiveButton("Accept", new DialogInterface.OnClickListener() {
+		           public void onClick(DialogInterface dialog, int id) {
+		                dialog.cancel();
+		           }
+		    });
+			builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+		           public void onClick(DialogInterface dialog, int id) {
+		        	   	mapView.getOverlays().clear();
+		        	   	mapView.invalidate();
+		                dialog.cancel();
+		           }
+		    });
+			alert = builder.create();
+			alert.show();
+		}
+		else if(v== highlight){
+			
+		}
+		else if(v == section){
+			
+		}
+		else{
+			
+		}
+	}
+
+	public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2,long arg3) {
+		Toast.makeText(arg0.getContext(),
+				"Changing the View to the  " + arg0.getItemAtPosition(arg2).toString(),
+				Toast.LENGTH_SHORT).show();
+		CenterMap();
+		
+	}
+
+	public void onNothingSelected(AdapterView<?> arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
+

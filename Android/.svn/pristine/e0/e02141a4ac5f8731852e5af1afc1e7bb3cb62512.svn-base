@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:orientation="horizontal">
+    
+    <Button
+            android:id="@+id/sta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Standard" />
+    <Button
+            android:id="@+id/exp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Express" />
+    <Button
+            android:id="@+id/sce"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Scenic" />
+    <Button
+            android:id="@+id/cus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Custom" />
+    
+    </LinearLayout>
+    
+    
+    <com.google.android.maps.MapView
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:id="@+id/map"
+	android:clickable="true"
+	android:apiKey="0WkC5ANoCR9utisPeoO17OlP7TxcKAFwQovvgiQ"
+	android:layout_weight="1.8"/>
+    
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal"
+   	android:layout_weight="3.0">
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+       <Button
+            android:id="@+id/nor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  North Campus   " />
+        
+        <Button
+            android:id="@+id/sou"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  South Campus   " />
+
+        <Button
+            android:id="@+id/div"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="School of Divinity" />
+
+        <Button
+            android:id="@+id/law"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  School of Law   " />
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </ListView>
+
+</LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,420 @@
+package tour.howard;
+
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
+
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.Spinner;
+import android.widget.Toast;
+
+import com.google.android.maps.GeoPoint;
+import com.google.android.maps.MapActivity;
+import com.google.android.maps.MapController;
+import com.google.android.maps.MapView;
+import com.google.android.maps.OverlayItem;
+
+
+
+public class HUMap extends MapActivity implements OnClickListener, OnItemSelectedListener{
+	//private WindowManager wm;
+	private MapView mapView;
+	private MapController mapController;
+	private Button standard,showme,highlight,busroutes;
+	private Spinner section;
+	private AlertDialog alert;
+	private MyOverlays landmarks, bus;
+	private CustomItemizedOverlay<CustomOverlayItem> places, busStops;
+	
+	 
+	@Override
+	@SuppressWarnings("deprecation")
+	public void onCreate(Bundle bundle) {
+		super.onCreate(bundle);
+		setContentView(R.layout.map); // bind the layout to the activity
+		
+		//set the map 
+		mapView = (MapView)findViewById(R.id.map);
+		mapView.setBuiltInZoomControls(true);
+		mapView.setSatellite(false);
+		mapView.setTraffic(false);
+		mapView.setStreetView(true);
+		mapController = mapView.getController();
+		mapController.setZoom(18);
+		
+		//spinner for different section on campus
+		section = (Spinner)findViewById(R.id.sect);
+		String[] values = getResources().getStringArray(R.array.Sections);
+		ArrayAdapter<String> views = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,values);
+		section.setAdapter(views);
+		section.setOnItemSelectedListener(this);
+		
+		CenterMap();
+		
+		busroutes = (Button)findViewById(R.id.busr);
+		busroutes.setOnClickListener(this);
+		
+		standard = (Button) findViewById(R.id.tour);
+		standard.setOnClickListener(this);
+		
+		showme = (Button)findViewById(R.id.show);
+		showme.setOnClickListener(this);
+		
+		highlight = (Button)findViewById(R.id.high);
+		highlight.setOnClickListener(this);
+		
+		Drawable landmark = this.getResources().getDrawable(R.drawable.bison);
+		Drawable busstop  = this.getResources().getDrawable(R.drawable.busstop);
+		landmarks = new MyOverlays(landmark,this);
+		bus = new MyOverlays(this.getResources().getDrawable(R.drawable.bus),this);
+		places = new CustomItemizedOverlay<CustomOverlayItem>(landmark, mapView);
+		busStops = new CustomItemizedOverlay<CustomOverlayItem>(busstop,mapView);
+		
+				
+	}
+
+	
+	 
+	@Override
+	protected boolean isRouteDisplayed() {
+		return false;
+	}
+	//move the map to a certain geo location based on the section chosen
+	private void CenterMap(){
+		mapController = mapView.getController();
+		mapController.setZoom(18);
+		GeoPoint p;
+		switch(section.getSelectedItemPosition()){
+		case 0:p = new GeoPoint((int)(38.924932*1E6),(int)(-77.019372*1E6));
+			break;
+		case 1:p = new GeoPoint((int)(38.918944*1E6),(int)(-77.019919*1E6));
+			break;
+		case 2:p = new GeoPoint((int)(38.922592*1E6),(int)(-77.020208*1E6));
+			break;
+		case 3:p = new GeoPoint((int)(38.921148*1E6),(int)(-77.017730*1E6));
+			break;
+		case 4:p = new GeoPoint((int)(38.919094*1E6),(int)(-77.024307*1E6));
+			break;
+		case 5:p = new GeoPoint((int)(38.943840*1E6),(int)(-77.057995*1E6));
+			break;
+		case 6:p = new GeoPoint((int)(38.939843*1E6),(int)(-76.983184*1E6));
+			break;
+		default: p = new GeoPoint(0,0);
+		}
+		mapController.animateTo(p);
+	}
+	 
+	@Override
+	protected void onResume(){
+		super.onResume();
+	}
+
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		//start a tour
+		if(v == standard){
+			startActivity(new Intent(this,GuideActivity.class ));
+		}
+		//show different points of interests
+		else if(v == showme){
+			mapView.getOverlays().clear();
+			final CharSequence[] items = getResources().getStringArray(R.array.Show);
+			AlertDialog.Builder builder = new AlertDialog.Builder(this);
+			builder.setTitle("Pick a group of buildings");
+			builder.setSingleChoiceItems(items,-1,new DialogInterface.OnClickListener() {
+			    public void onClick(DialogInterface dialog, int item) {
+			    	landmarks.clear();
+			    	places.clear();
+					int[] data  = {};
+					String [] title = {};
+					String [] image = {};
+					switch(item){
+					case 0: break;
+					case 1:	data = getResources().getIntArray(R.array.Parking); break;
+					case 2: data = getResources().getIntArray(R.array.Athletic);break;
+					case 3: data = getResources().getIntArray(R.array.Libraries);
+					 		title = getResources().getStringArray(R.array.LibName); break;
+					case 4: data = getResources().getIntArray(R.array.Residence);
+							title = getResources().getStringArray(R.array.ResName);break;	
+					case 5: data = getResources().getIntArray(R.array.Restaurants);
+							title = getResources().getStringArray(R.array.RestName);
+							image = getResources().getStringArray(R.array.ResImage);break;	
+					}
+					if(item!=0){
+						Toast.makeText(getApplicationContext(),
+								"Showing the  " + items[item] + " of Howard" //+ data.length
+								,Toast.LENGTH_SHORT).show();
+						int i  =0;
+						if( item < 3){
+							while( i < data.length){
+								GeoPoint w = new GeoPoint(data[i],data[i+1]);
+								landmarks.addOverlay(new OverlayItem(w,"",""));
+								i+=2;
+							}
+							mapView.getOverlays().add(landmarks);
+						}
+						else{
+							int j = 0;
+							while(i<data.length){
+								GeoPoint w = new GeoPoint(data[i],data[i+1]);
+								CustomOverlayItem add;
+								if(item != 5){
+									add = new CustomOverlayItem(w,title[j],
+										"","");
+								}
+								else{
+									add = new CustomOverlayItem(w,title[j],
+											"",image[j]);
+								}
+								places.addOverlay(add);
+								i+=2;
+								j++;
+							}
+							mapView.getOverlays().add(places);
+						}
+						mapView.invalidate();
+					}
+					else{
+						Toast.makeText(getApplicationContext(),"Nothing selected",Toast.LENGTH_SHORT).show();
+					}
+			    }
+			});
+			builder.setPositiveButton("Accept", new DialogInterface.OnClickListener() {
+		           public void onClick(DialogInterface dialog, int id) {
+		                dialog.cancel();
+		           }
+		    });
+			builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+		           public void onClick(DialogInterface dialog, int id) {
+		        	   	mapView.getOverlays().clear();
+		        	   	mapView.invalidate();
+		                dialog.cancel();
+		           }
+		    });
+			alert = builder.create();
+			alert.show();
+		}
+		//draw the outline for the building selected
+		else if(v== highlight){
+			mapView.getOverlays().clear();
+			final String[] items = getResources().getStringArray(R.array.Buildings);
+			for(int i =0; i < items.length; i++){
+				items[i] = items[i].replace('_', ' ');
+			}
+			AlertDialog.Builder builder = new AlertDialog.Builder(this);
+			builder.setTitle("Pick a building to highlight");
+			builder.setSingleChoiceItems(items,-1,new DialogInterface.OnClickListener() {
+			    public void onClick(DialogInterface dialog, int item) {
+					int[] data  = {};
+					switch(item){
+					case 0: data = getResources().getIntArray(R.array.Engineering_Building); break;
+					case 1:	data = getResources().getIntArray(R.array.Mackey_Building); break;
+					case 2: data = getResources().getIntArray(R.array.Douglass_Hall);break;
+					case 3: data = getResources().getIntArray(R.array.School_of_Business);break;
+					case 4: data = getResources().getIntArray(R.array.Carnegie_Hall);break;	
+					case 5: data = getResources().getIntArray(R.array.Drew_Hall); break;
+					case 6:	data = getResources().getIntArray(R.array.Cook_Hall); break;
+					case 7: data = getResources().getIntArray(R.array.East_Towers_Plaza);break;
+					case 8: data = getResources().getIntArray(R.array.West_Towers_Plaza);break;
+					case 9: data = getResources().getIntArray(R.array.Health_Science_Library);break;
+					case 10: data = getResources().getIntArray(R.array.Graduate_Library);break;
+					case 11: data = getResources().getIntArray(R.array.Undergraduate_Library);break;
+					case 12: data = getResources().getIntArray(R.array.Thirkield_Hall);break;
+					case 13: data = getResources().getIntArray(R.array.Chemical_Engineering_Building);break;
+					case 14: data = getResources().getIntArray(R.array.Bunche_Center);break;
+					case 15: data = getResources().getIntArray(R.array.Power_Plant);break;
+					case 16: data = getResources().getIntArray(R.array.Rankin_Chapel);break;
+					case 17: data = getResources().getIntArray(R.array.Blackburn_Center);break;
+					case 18: data = getResources().getIntArray(R.array.Burr_Gymnasium);break;
+					case 19: data = getResources().getIntArray(R.array.Lindsay_Hall);break;
+					case 20: data = getResources().getIntArray(R.array.Mordecai_Admin_Building);break;
+					case 21: data = getResources().getIntArray(R.array.Howard_Hall);break;
+					case 22: data = getResources().getIntArray(R.array.Howard_Manor);break;
+					case 23: data = getResources().getIntArray(R.array.Effingham_Apartments);break;
+					}
+					Toast.makeText(getApplicationContext(),
+							"Highlighting the  " + items[item] + " of Howard" //+ data.length
+							,Toast.LENGTH_SHORT).show();
+					int i =2;
+					while(i < data.length){
+						   mapView.getOverlays().add(new RouteOverlay(new GeoPoint(data[i-2],data[i-1]), new GeoPoint(data[i],data[i+1]), -65536));
+						   i+=2;
+					}
+					mapView.invalidate();
+					dialog.cancel();
+			    }
+			});
+			alert = builder.create();
+			alert.show();
+		}
+		//draw the bus route selected on the map
+		else if(v == busroutes){
+			mapView.getOverlays().clear();
+			busStops.clear();
+			final String[] items = getResources().getStringArray(R.array.busRoutes);
+			AlertDialog.Builder builder = new AlertDialog.Builder(this);
+			builder.setTitle("Pick a Route to highlight");
+			builder.setSingleChoiceItems(items,-1,new DialogInterface.OnClickListener() {
+			    public void onClick(DialogInterface dialog, int item) {
+					int[] route  = {};
+					int[] stops  = {};
+					int siteIndex = 7;
+					switch(item){
+					case 0 :siteIndex = 5;
+							stops = getResources().getIntArray(R.array.diviStops); break;
+					case 1 :siteIndex = 10;
+							stops = getResources().getIntArray(R.array.mornStops); break;
+					case 2 :siteIndex = 6;
+							stops = getResources().getIntArray(R.array.lawStops); break;
+					case 3 :siteIndex = 3;
+							stops = getResources().getIntArray(R.array.northStops); break;
+					case 4 :siteIndex = 4;
+							stops = getResources().getIntArray(R.array.nexpStops); break;
+					case 5 :siteIndex = 1;
+							stops = getResources().getIntArray(R.array.southStops); break;
+					case 6 :siteIndex = 2;
+							stops = getResources().getIntArray(R.array.sexpStops); break;
+					case 7 :siteIndex = 8;
+							stops = getResources().getIntArray(R.array.summStops); break;
+					case 8 :siteIndex = 9;
+							stops = getResources().getIntArray(R.array.utcStops); break;
+					case 9 :siteIndex = 7;
+							stops = getResources().getIntArray(R.array.wendStops); break;
+					}
+					Toast.makeText(getApplicationContext(),
+							"Highlighting the  " + items[item] + " Route" //+ route.length
+							,Toast.LENGTH_SHORT).show();
+					route = getResources().getIntArray(R.array.south);
+					int i =2;
+					//draw lines from point to point
+					while(i < route.length){
+						   mapView.getOverlays().add(new RouteOverlay(new GeoPoint(route[i-2],route[i-1]), new GeoPoint(route[i],route[i+1]), Color.argb(5, 99, 184, 255)));
+						   i+=2;
+					}
+					i = 2;
+					while(i < stops.length+2){
+							GeoPoint w = new GeoPoint(stops[i-2],stops[i-1]);
+							busStops.addOverlay(new CustomOverlayItem(w,"","",""));
+						   i+=2;
+					}
+					BusInfo businfo = new BusInfo();
+					businfo.execute("http://www.howardshuttle.com/m/Route.aspx?RouteID="+siteIndex);
+					mapView.getOverlays().add(busStops);
+					mapView.invalidate();
+					dialog.cancel();
+			    }
+			});
+			alert = builder.create();
+			alert.show();
+		}
+		else if(v == section){
+			
+		}
+		else{
+			
+		}
+	}
+
+	public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2,long arg3) {
+		Toast.makeText(arg0.getContext(),
+				"Changing the View to the  " + arg0.getItemAtPosition(arg2).toString(),
+				Toast.LENGTH_SHORT).show();
+		CenterMap();
+		
+	}
+
+	public void onNothingSelected(AdapterView<?> arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+	//extracts bus geolocation data from the website
+	private class BusInfo extends AsyncTask<String, Void, ArrayList<GeoPoint> >{
+		private final ArrayList<GeoPoint> businfo = new ArrayList<GeoPoint>();
+	    @Override
+		protected ArrayList<GeoPoint> doInBackground(String... urls) {
+	      String response = "";
+	      for (String url : urls) {
+	        DefaultHttpClient client = new DefaultHttpClient();
+	        HttpGet httpGet = new HttpGet(url);
+	        try {
+	          HttpResponse execute = client.execute(httpGet);
+	          InputStream content = execute.getEntity().getContent();
+
+	          BufferedReader buffer = new BufferedReader(new InputStreamReader(content));
+	          String s = "";
+	          while ((s = buffer.readLine()) != null) {
+	            response += s;
+	          }
+
+	        } catch (Exception e) {
+	          e.printStackTrace();
+	        }
+	      }
+	      if(response.contains("||")){
+	    	  response = response.substring(response.indexOf("||"));
+	    	  response = response.substring(2,response.indexOf("&path"));
+	    	  response = response.replace('|', ' ');
+	    	  response = response.replace(',', ' ');
+	    	  Scanner extracter = new Scanner(response);
+	    	  while(extracter.hasNext())
+	    	  {
+	    		  String num = Double.toString(extracter.nextDouble());
+	    		  int place = num.length()-1-num.indexOf(".");
+	    		  Integer x = (int) (Double.parseDouble(num) * Math.pow(10, 6));
+	    		  num = extracter.next();
+	    		  place = num.length()-1-num.indexOf(".");
+	    		  Integer y = (int) (Double.parseDouble(num) * Math.pow(10, 6));
+	    		  businfo.add(new GeoPoint(x,y));
+	    	  }
+	    	  
+	      }
+	      else
+	      {
+	     	  response = "No vehicles are on route";
+	      }
+	      return businfo;
+	    }
+	    @Override
+		protected void onPostExecute(ArrayList<GeoPoint> result) {
+	    	bus.clear();
+	    	if(result.size() > 0)
+	    	{
+		    	for(int i = 0; i < result.size(); i++)
+		    	{
+		    		bus.addOverlay(new OverlayItem(result.get(i),"",""));	
+		    	}
+		    	mapView.getOverlays().add(bus);
+	    		mapView.invalidate();
+	    		Toast.makeText(getApplicationContext(),
+						"Showing the bus positions"
+						,Toast.LENGTH_SHORT).show();
+	    	}
+	    	else
+	    		Toast.makeText(getApplicationContext(),
+						"No vehicles are on route"
+						,Toast.LENGTH_SHORT).show();
+	    }
+
+	}
+
+
+}
+

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+     <integer-array name="Athletic">
+        <item >38925574</item><item >-77020859</item><!-- Greene Stadium -->
+        <item >38926520</item><item >-77022194</item><!-- Burr Gym -->
+        <item >38917931</item><item >-77015005</item><!-- Carver Hall Gym -->
+    </integer-array>
+    <integer-array name="Libraries">
+        <item >38919804</item><item >-77018702</item><!-- Health Science library -->
+        <item >38922287</item><item >-77018981</item><!-- UGL -->
+        <item >38922350</item><item >-77019673</item><!-- Graduate Library -->
+        <item >38922146</item><item >-77021439</item><!-- Architecture Library -->
+        <item >38922645</item><item >-77021702</item><!-- Lindsay Hall Library -->
+        <item >38943322</item><item >-77058835</item><!-- Law Library -->
+        <item >38939416</item><item >-76982488</item><!-- Divinity Library -->
+        <item >38924417</item><item >-77021957</item><!-- Business library -->
+        <!-- Engineering library -->
+    </integer-array>
+    <!-- source for parking  -->
+    <!-- http://auxiliary.howard.edu/parking-lot-locations.html -->
+    <integer-array name="Parking">
+        <item >38924611</item><item >-77020114</item><!-- A -->
+        <item >38920379</item><item >-77025532</item><!-- AA -->
+        <item >38919285</item><item >-77021573</item><!-- Bookstore -->
+        <item >38918559</item><item >-77020999</item><!-- Hospital parking -->
+        <item >38922616</item><item >-77019492</item><!-- B -->
+        <item >38924356</item><item >-77022356</item><!-- C -->
+        <item >38923860</item><item >-77022179</item><!-- D1 -->
+        <item >38923551</item><item >-77021418</item><!-- D2 -->
+        <item >38922975</item><item >-77022072</item><!-- E -->
+        <item >38921869</item><item >-77021466</item><!-- F -->
+        <item >38921326</item><item >-77021461</item><!-- G -->
+        <item >38927741</item><item >-77020919</item><!-- H -->
+        <item >38926643</item><item >-77021369</item><!-- I -->
+        <item >38926026</item><item >-77022228</item><!-- J -->
+        <item >38925362</item><item >-77023134</item><!-- K -->
+        <item >38921360</item><item >-77019438</item><!-- L -->
+        <item >38921356</item><item >-77019964</item><!-- M -->
+        <item >38921280</item><item >-77020479</item><!-- N -->
+        <item >38921038</item><item >-77020275</item><!-- O -->
+        <item >38920513</item><item >-77020635</item><!-- P -->
+        <item >38920521</item><item >-77021005</item><!-- Q -->
+        <item >38919795</item><item >-77017588</item><!-- R -->
+        <item >38919841</item><item >-77018258</item><!-- S -->
+        <item >38919327</item><item >-77020313</item><!-- T -->
+        <item >38919273</item><item >-77020999</item><!-- U -->
+        <item >38919891</item><item >-77022582</item><!-- V -->
+        <item >38919745</item><item >-77023365</item><!-- W -->
+        <item >38919169</item><item >-77023633</item><!-- X -->
+        <item >38919586</item><item >-77024395</item><!-- Y -->
+        <item >38921548</item><item >-77024781</item><!-- Z -->
+        <item >38920321</item><item >-77021573</item><!-- BB -->
+    </integer-array>
+    <integer-array name="Residence">
+        <item >38925386</item><item >-77021721</item><!-- Cook Hall -->
+        <item >38927321</item><item >-77020970</item><!-- Drew Hall -->
+        <item >38920666</item><item >-77017506</item><!-- Bethune Annex -->
+        <item >38922398</item><item >-77017847</item><!-- Wheatly Hall -->
+        <item >38922250</item><item >-77017330</item><!-- Truth Hall -->
+        <item >38921959</item><item >-77017928</item><!-- Baldwin Hall -->
+        <item >38921766</item><item >-77017256</item><!-- Crandall Hall -->
+        <item >38921573</item><item >-77017689</item><!-- Frazier Hall -->
+        <item >38917931</item><item >-77015005</item><!-- Carver Hall -->
+        <item >38916841</item><item >-77015528</item><!-- Slow Hall -->    
+        <item >38939583</item><item >-76982767</item><!-- Mays Hall -->
+        <item >38923626</item><item >-77035982</item><!-- Meridian -->
+        <item >38920439</item><item >-77023521</item><!-- East Towers-->
+        <item >38920343</item><item >-77024505</item><!-- West Towers -->
+    </integer-array>
+    <integer-array name="Standard">
+        <item >38923111</item><item >-77021252</item><!-- Mordecai Admin building -->
+        <item >38924598</item><item >-77021474</item><!-- School of B-->
+        <item >38924914</item><item >-77021549</item><!-- Cook Hall -->
+        <item >38924923</item><item >-77021270</item><!-- Greene Stadium 1 -->
+        <!-- <item >38925882</item><item >-77021453</item>--><!-- Greene Stadium 2 -->
+        <!-- <item >38926275</item><item >-77021667</item>--><!-- Burr -->
+        <item >38924455</item><item >-77021244</item><!-- Cramton -->
+        <item >38924035</item><item >-77021110</item><!-- Ira -->
+        <item >38924071</item><item >-77020616</item><!-- Childers -->
+        <item >38923670</item><item >-77020584</item><!-- douglass -->
+        <item >38923779</item><item >-77019608</item><!-- blackburn -->
+    </integer-array>
+    <integer-array name="Restaurants">
+        <item >38920709</item><item >-77022335</item><!-- MCDonalds -->
+        <item >38920972</item><item >-77021970</item><!-- Subway -->
+        <item >38920087</item><item >-77021825</item><!-- Potbelly -->
+        <item >38919799</item><item >-77021777</item><!-- Starbucks -->
+        <item >38920538</item><item >-77021863</item><!-- Kabob -->
+        <item >38920659</item><item >-77021874</item><!-- Negril -->
+        <item >38920735</item><item >-77021879</item><!-- China Wonder-->
+        <item >38926639</item><item >-77022743</item><!-- Howard China-->
+        <item >38919010</item><item >-77020141</item><!-- Simply To Go -->
+        <item >38923204</item><item >-77021600</item><!-- Jazzman's cafe & Bakery -->
+    </integer-array>
+        <integer-array name="Cafeteria">
+        <item >38925386</item><item >-77021721</item><!-- Cook Hall -->
+    </integer-array>
+        <integer-array name="Cstore">
+        <item >38925386</item><item >-77021721</item><!-- Cook Hall -->
+    </integer-array>   
+</resources>

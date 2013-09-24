@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, TourHowardActivity!</string>
+    <string name="app_name">TourHoward</string>
+    <string-array name="SouthPlaces">
+        <item >Howard University Hospital</item>
+        <item >Howard Plaza East Towers</item>
+        <item >Howard Plaza West Towers</item>
+        <item >College of Medicine</item>
+        <item >Colleg of Dentistry</item>
+        <item >College of Nursing and Allied Health</item>
+        <item >Howard University Book Store</item>
+        <item >Career Service Center</item>
+    </string-array>
+
+</resources>

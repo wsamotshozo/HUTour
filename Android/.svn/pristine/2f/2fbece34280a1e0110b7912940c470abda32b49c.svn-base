@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="Gallery1">
+    <attr name="android:galleryItemBackground"/>
+     </declare-styleable>
+    <color name="orange">#FF1200</color>
+    <color name="pink">#FF1200</color>
+    <color name="green">#FF1200</color>
+    <color name="lime">#FF1200</color>
+    <color name="purple">#4B0082</color>
+    <color name="red">#FF1200</color>
+    <color name="brown">#FF1200</color>
+</resources>

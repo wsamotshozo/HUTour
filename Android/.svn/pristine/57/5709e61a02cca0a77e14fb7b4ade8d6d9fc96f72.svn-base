@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/tour"
+            android:layout_width="wrap_content"
+            android:layout_height="250dp"
+            android:layout_weight="1"
+            android:src="@drawable/welleft" >
+        </ImageButton>
+
+        <ImageButton
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/life"
+            android:layout_width="wrap_content"
+            android:layout_height="250dp"
+            android:layout_weight="1"
+            android:src="@drawable/weldexter" />
+    </LinearLayout>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal" >
+
+    <Button
+        android:id="@+id/detpoi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Points of Interests" />
+
+    <Button
+        android:id="@+id/dethi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Howard Life" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,261 @@
+package tour.howard;
+
+import java.util.ArrayList;
+
+import tour.howard.ShowMapActivity.GeoUpdateHandler;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
+import android.content.res.TypedArray;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
+import android.os.Bundle;
+import android.speech.tts.TextToSpeech;
+import android.view.View;
+import android.view.WindowManager;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup.LayoutParams;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.AdapterViewFlipper;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.Toast;
+import android.widget.ViewFlipper;
+import android.widget.BaseAdapter;
+import android.widget.Gallery;
+import android.widget.ImageView;
+import com.google.android.maps.GeoPoint;
+import com.google.android.maps.MapActivity;
+import com.google.android.maps.MapController;
+import com.google.android.maps.MapView;
+import com.google.android.maps.OverlayItem;
+
+public class GuideActivity extends MapActivity implements OnItemClickListener, OnClickListener, TextToSpeech.OnInitListener{
+	
+	private Integer[] pics = {R.drawable.std1,R.drawable.std2,R.drawable.std3,
+			R.drawable.std4,R.drawable.std5,R.drawable.std6,
+			R.drawable.std7,R.drawable.std8,R.drawable.std9};
+	private AlertDialog alert;
+	private ViewFlipper info;
+	private Button next,previous, showLegend;
+	private MapView map;
+	private ImageView image;
+	private WindowManager wm;
+	private MapController mapController;
+	private MyOverlays itemizedoverlay;
+	private LocationManager locationManager;
+	private TextToSpeech talk;
+	private static boolean locked = true;
+	//int[] coord = getResources().getIntArray(R.array.Standard);
+	Color path = new Color();
+	ArrayList<GeoPoint> route = new ArrayList<GeoPoint>();
+	private int part = 0;
+	@SuppressWarnings("deprecation")
+	public void onCreate(Bundle bundle){
+		super.onCreate(bundle);
+		setContentView(R.layout.guide);
+		
+		Gallery show = (Gallery)findViewById(R.id.gallery);
+		show.setAdapter(new ImageAdapter(this));
+		show.setOnItemClickListener(this);
+		
+		next = (Button) findViewById(R.id.Button01);
+		previous = (Button) findViewById(R.id.Button02);
+		next.setOnClickListener(showImage);
+		previous.setOnClickListener(showMap);
+		info = (ViewFlipper)findViewById(R.id.flipper);
+		showLegend = (Button)findViewById(R.id.Legend);
+		showLegend.setOnClickListener(this);
+
+		wm = (WindowManager)getSystemService(Context.WINDOW_SERVICE);
+        int height = wm.getDefaultDisplay().getHeight();
+        
+		map = (MapView)findViewById(R.id.map);
+		map.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.FILL_PARENT,height - 300));
+		mapController = map.getController();
+		mapController.setZoom(19);
+		mapController.animateTo(new GeoPoint(38923217,-77021241));
+		image = (ImageView)findViewById(R.id.Image);
+		
+		locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+		locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, new GeoUpdateHandler());
+		Drawable drawable = this.getResources().getDrawable(R.drawable.point);
+		itemizedoverlay = new MyOverlays(drawable,this);
+		populatePath();
+		drawPath();
+		drawPath(part);
+		doLock();
+		talk = new TextToSpeech(this, this);
+		
+	}
+	private OnClickListener showImage = new OnClickListener() {
+
+		public void onClick(View v) {
+			info.setDisplayedChild(1);
+		}
+	};
+	private OnClickListener showMap = new OnClickListener() {
+
+		public void onClick(View v) {
+			info.setDisplayedChild(0);
+		}
+	};
+	
+	protected boolean isRouteDisplayed() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+   public class ImageAdapter extends BaseAdapter {
+
+    	private Context ctx;
+    	int imageBackground;
+    	
+    	public ImageAdapter(Context c) {
+			ctx = c;
+			TypedArray ta = obtainStyledAttributes(R.styleable.Gallery1);
+			imageBackground = ta.getResourceId(R.styleable.Gallery1_android_galleryItemBackground, 1);
+			ta.recycle();
+		}
+    	public int getCount() {
+    		
+    		return pics.length;
+    	}
+    	public Object getItem(int arg0) {
+    		
+    		return arg0;
+    	}
+    	public long getItemId(int arg0) {
+    		
+    		return arg0;
+    	}
+    	public View getView(int arg0, View arg1, ViewGroup arg2) {
+    		ImageView iv = new ImageView(ctx);
+    		iv.setImageResource(pics[arg0]);
+    		iv.setScaleType(ImageView.ScaleType.FIT_XY);
+    		iv.setLayoutParams(new Gallery.LayoutParams(150,120));
+    		iv.setBackgroundResource(imageBackground);
+    		return iv;
+    	}
+    }
+   private void drawPath(){
+	   int[] values = getResources().getIntArray(R.array.Standard);
+	   int i = 2;
+	   while(i< values.length){
+	   map.getOverlays().add(new RouteOverlay(new GeoPoint(values[i-2],values[i-1]), new GeoPoint(values[i],values[i+1]), path.BLUE));
+	   i+=2;
+	   }
+   }
+   private void drawPath(int i){   
+	   map.getOverlays().add(new RouteOverlay(route.get(i), route.get(i+1), path.BLACK, 16));
+	   map.getOverlays().add(new RouteOverlay(route.get(i), route.get(i+1), path.rgb(113, 255, 113), 13));
+   }
+	private void createMarker() {
+		GeoPoint p = map.getMapCenter();
+		OverlayItem overlayitem = new OverlayItem(p, "", "");
+		itemizedoverlay.clear();
+		itemizedoverlay.addOverlay(overlayitem);
+		map.getOverlays().add(itemizedoverlay);
+		map.invalidate();
+	}
+	public class GeoUpdateHandler implements LocationListener {
+	
+		public void onLocationChanged(Location location) {
+			int lat = (int) (location.getLatitude() * 1E6);
+			int lng = (int) (location.getLongitude() * 1E6);
+			GeoPoint point = new GeoPoint(lat, lng);
+			mapController.animateTo(point);
+			
+			if(route.size() > part +1){
+				if(Math.abs(lat - route.get(part+1).getLatitudeE6()) < 50 && 
+						Math.abs(lng - route.get(part+1).getLongitudeE6()) < 50)
+				{
+					part ++;
+					map.getOverlays().clear();
+					drawPath();
+					drawPath(part);
+					showInfo();
+				}
+			}
+			createMarker();
+			map.invalidate();
+	
+		}
+	
+		public void onProviderDisabled(String provider) {
+			
+		}
+	
+		public void onProviderEnabled(String provider) {
+		}
+	
+		public void onStatusChanged(String provider, int status, Bundle extras) {
+		}
+	}
+	public void populatePath(){
+		int values [] = getResources().getIntArray(R.array.Standard);
+		int j = 0;
+		int i = 0;
+		while(i < values.length){
+			route.add(new GeoPoint(values[i],values[i+1]));
+			j++;
+			i+=2;
+		}
+	}
+	public void showInfo(){
+		String values [] = getResources().getStringArray(R.array.narr);
+		talk.speak(values[part], TextToSpeech.QUEUE_FLUSH, null);
+		info.setDisplayedChild(1);
+		image.setBackgroundResource(pics[part]);
+	}
+	public void doLock() {
+        if (locked) {
+            if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+            }
+            if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
+                setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+            }
+        } else {
+            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
+        }
+    }
+	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+		// TODO Auto-generated method stub
+		//Toast.makeText(getBaseContext(), "You are on part" + part + " of the Standard Howard To", duration)
+		image.setImageResource(pics[arg2]);
+	}
+	public void onClick(View arg0) {
+		// TODO Auto-generated method stub
+		if((Button) arg0 == showLegend)
+		{
+			ImageView legend = new ImageView(this);
+			legend.setBackgroundResource(R.drawable.legend);
+			final CharSequence[] items = getResources().getStringArray(R.array.Show);
+			AlertDialog.Builder builder = new AlertDialog.Builder(this);
+			builder.setTitle("Map Legend");
+			builder.setView(legend);
+			builder.setPositiveButton("Accept", new DialogInterface.OnClickListener() {
+		           public void onClick(DialogInterface dialog, int id) {
+		                dialog.cancel();
+		           }
+		    });
+			alert = builder.create();
+			alert.show();
+		}
+		
+	}
+	public void onInit(int arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
+ 

@@ -1,0 +1,148 @@
+package tour.howard;
+
+import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.View.OnTouchListener;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
+import android.widget.Spinner;
+import android.widget.Toast;
+import android.widget.AdapterView.OnItemSelectedListener;
+
+import com.google.android.maps.GeoPoint;
+import com.google.android.maps.MapActivity;
+import com.google.android.maps.MapController;
+import com.google.android.maps.MapView;
+import com.google.android.maps.OverlayItem;
+
+public class ShowMeActivity extends MapActivity /*implements LocationListener*/ {
+
+	private MapController mapController;
+	private MapView mapView;
+	private LocationManager locationManager;
+	private String provider;
+	private MyOverlays landmarks, URH;
+	private int maxLong= (int)(-77.0208 * 1E6);
+	private int minLong= (int)(-77.0207 * 1E6);
+	private int maxLat= (int)(38.9195 * 1E6);
+	private int minLat= (int)(38.9205 * 1E6);
+	private GeoPoint waypost [] = {new GeoPoint((int)(38.917256*1E6),(int)(-77.020589*1E6)),new GeoPoint((int)(38.920566*1E6),(int)(-77.023602*1E6))};
+	private Spinner select;
+	private String values [];
+	private GeoPoint places [] ={
+	//public parking
+	new GeoPoint(38921370,-77021535),
+	new GeoPoint(38920011,-77022657),
+	//permit parking
+	//new GeoPoint(),
+	//new GeoPoint(),
+	//athletic facilities
+	new GeoPoint(38925574,-77020859),
+	new GeoPoint(38926520,-77022194),
+	//libraries
+	new GeoPoint(38919804,-77018702),
+	new GeoPoint(38922287,-77018981),
+	new GeoPoint(38922350,-77019673)
+	};
+	@SuppressWarnings("deprecation")
+	public void onCreate(Bundle bundle) {
+		super.onCreate(bundle);
+		setContentView(R.layout.show); // bind the layout to the activity
+
+		mapView = (MapView) findViewById(R.id.mapview);
+		mapView.setBuiltInZoomControls(true);
+		// Either satellite or 2d 
+		mapView.setSatellite(false);
+		mapView.setTraffic(false);
+		mapView.setStreetView(true);
+		//mapView.setOnTouchListener(new Touch());
+		mapController = mapView.getController();
+		mapController.setZoom(18);
+		locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+		locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, new GeoUpdateHandler());
+		Drawable urh = this.getResources().getDrawable(R.drawable.point);
+		URH = new MyOverlays(urh,this);
+		Drawable landmark = this.getResources().getDrawable(R.drawable.bison);
+		landmarks = new MyOverlays(landmark,this);
+		
+		select = (Spinner)findViewById(R.id.show);
+		values = getResources().getStringArray(R.array.Show);
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,values);
+		select.setAdapter(adapter);
+		select.setOnItemSelectedListener(showContent);
+		
+		 
+	}
+	private OnItemSelectedListener showContent= new OnItemSelectedListener(){
+
+		public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+			mapView.getOverlays().clear();
+			mapView.invalidate();
+			landmarks.clear();
+			
+			int[] data  = {};
+			switch(arg2){
+			case 0: break;
+			case 1:	data = getResources().getIntArray(R.array.Parking); break;
+			case 2: data = getResources().getIntArray(R.array.Athletic);break;
+			case 3: data = getResources().getIntArray(R.array.Libraries);break;
+			case 4: data = getResources().getIntArray(R.array.Residence);break;	
+			}
+			if(arg2!=0){
+				Toast.makeText(arg0.getContext(),
+						"Showing the  " + arg0.getItemAtPosition(arg2).toString() + " of Howard" //+ data.length
+						,Toast.LENGTH_SHORT).show();
+				int i  =0;
+				while( i < data.length){
+					GeoPoint w = new GeoPoint(data[i],data[i+1]);
+					landmarks.addOverlay(new OverlayItem(w,"",""));
+					i+=2;
+					
+				}
+				mapView.getOverlays().add(landmarks);
+				mapView.invalidate();
+			}
+			else{
+				Toast.makeText(arg0.getContext(),"Nothing selected",Toast.LENGTH_SHORT).show();
+			}
+		}
+
+		public void onNothingSelected(AdapterView<?> arg0) {
+			// TODO Auto-generated method stub
+			//CenterMap();
+		}
+		
+	};
+
+	
+	protected boolean isRouteDisplayed() {
+		return false;
+	}
+
+	public class GeoUpdateHandler implements LocationListener {
+		public void onLocationChanged(Location location) {
+			URH.clear();
+			int lat = (int) (location.getLatitude() * 1E6);
+			int lng = (int) (location.getLongitude() * 1E6);
+			GeoPoint point = new GeoPoint(lat, lng);
+			OverlayItem overlayitem = new OverlayItem(point, "", "");
+			URH.addOverlay(overlayitem);
+			mapView.getOverlays().add(URH);
+			mapView.invalidate();
+		}
+		public void onProviderDisabled(String provider) {
+		}
+		public void onProviderEnabled(String provider) {
+		}
+		public void onStatusChanged(String provider, int status, Bundle extras) {
+		}
+	}
+}

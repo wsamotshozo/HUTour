@@ -1,0 +1,60 @@
+package tour.howard.extra;
+
+import tour.howard.R;
+import tour.howard.ShowStandard;
+import tour.howard.R.layout;
+import android.app.Activity;
+import android.content.Intent;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.VideoView;
+import android.widget.Toast;
+import android.widget.MediaController;
+import android.os.Bundle;
+public class TourHowardActivity extends Activity {
+   
+	//private String path = "";
+	//private VideoView mVideoView;
+	/** Called when the activity is first created. */
+    
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.map);
+        /*VideoView myVideoView = (VideoView)findViewById(R.id.myvideoview);
+    
+        myVideoView.setMediaController(new MediaController(this));
+        myVideoView.requestFocus();
+        myVideoView.start();
+        
+        if (path == "") {
+            // Tell the user to provide a media file URL/path.
+            Toast.makeText(
+                    HowardTourActivity.this,
+                    "Please edit VideoViewDemo Activity, and set path"
+                            + " variable to your media file URL/path",
+                    Toast.LENGTH_LONG).show();
+
+        } else {
+
+            /*
+             * Alternatively,for streaming media you can use
+             * mVideoView.setVideoURI(Uri.parse(URLstring));
+             */
+      //      myVideoView.setVideoPath(path);
+        //    myVideoView.setMediaController(new MediaController(this));
+          //  myVideoView.requestFocus();
+
+       // }*/
+        
+       //Create Buttons
+//		Button standard = (Button) findViewById(R.id.standard);
+//		standard.setOnClickListener(showDefault);
+    }
+	private OnClickListener showDefault = new OnClickListener() {
+
+		public void onClick(View v) {
+			startActivity(new Intent(TourHowardActivity.this,ShowStandard.class ));
+		}
+	};
+}

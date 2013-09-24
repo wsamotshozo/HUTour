@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <Gallery
+        android:id="@+id/gallery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+        	<ViewFlipper android:id="@+id/flipper"
+android:layout_height="wrap_content" android:layout_width="wrap_content" >
+	<!-- adding views to ViewFlipper -->
+	
+	
+	<!-- View 1 - -->
+	<LinearLayout 
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+        	<com.google.android.maps.MapView
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:id="@+id/map"
+	android:clickable="true"
+	android:apiKey="0WkC5ANoCR9utisPeoO17OlP7TxcKAFwQovvgiQ"
+	/>
+
+	</LinearLayout>
+	
+<!-- View 2 -->
+	<LinearLayout 
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="300dp" >
+	        	<ImageView android:id="@+id/Image" 
+    android:layout_width="fill_parent" 
+    android:layout_height="fill_parent"/>
+
+	</LinearLayout>
+	
+</ViewFlipper>
+<LinearLayout android:id="@+id/LinearLayout03"
+	android:layout_height="wrap_content"
+	android:layout_width="wrap_content" 
+	android:orientation="horizontal"
+	android:layout_gravity="center">
+	<Button android:id="@+id/Button02"
+	    android:layout_height="wrap_content" 
+		android:text="showMap"
+		android:layout_width="wrap_content" 
+		android:layout_gravity="center"/>
+	<Button android:id="@+id/Legend"
+	    android:text="  Legend   " 
+		android:layout_height="match_parent"
+		android:layout_width="wrap_content" 
+		android:layout_gravity="center"/>
+	<Button android:id="@+id/Button01"
+	    android:text="    showImage" 
+		android:layout_height="match_parent"
+		android:layout_width="wrap_content" 
+		android:layout_gravity="center"/>
+</LinearLayout>
+        	
+
+
+</LinearLayout>

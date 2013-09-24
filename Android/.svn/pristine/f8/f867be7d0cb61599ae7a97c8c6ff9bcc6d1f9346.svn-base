@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list android:id="@+id/bull" android:oneshot="false" xmlns:android="http://schemas.android.com/apk/res/android">
+<item android:drawable="@drawable/bull1" android:duration="100" />
+<item android:drawable="@drawable/bull2" android:duration="100" />
+<item android:drawable="@drawable/bull3" android:duration="100" />
+<item android:drawable="@drawable/bull4" android:duration="100" />
+</animation-list>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+        <string-array name="LibName">
+        <item >Health Science Library</item>
+        <item >Undergraduate Library</item>
+        <item >Graduate Library</item>
+        <item >Architecture Library</item>
+        <item >Lindsay Hall Library</item>
+        <item >Law Library</item>
+        <item >Divinity</item>
+        <item >Business Library</item>
+        </string-array>
+        <string-array name="ResName">
+        <item >Cook Hall</item>
+        <item >Drew Hall</item>
+        <item >Bethune Annex</item>
+        <item >Wheatly Hall</item>
+        <item >Truth Hall</item>
+        <item >Baldwin Hall</item>
+        <item >Crandall Hall</item>
+        <item >Frazier Hall</item>
+        <item >Carver Hall</item>
+        <item >Slow Hall</item>
+        <item >Mays Hall</item>
+        <item >Meridian</item>
+        <item >East Towers</item>
+        <item >West Towers</item>
+        </string-array>
+</resources>

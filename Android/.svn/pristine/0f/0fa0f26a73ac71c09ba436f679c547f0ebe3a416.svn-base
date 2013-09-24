@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<resources>
+	<integer-array name = "Engineering_Building">
+		<item>38921230</item>		<item>-77021114</item>
+		<item>38921476</item>		<item>-77021139</item>
+		<item>38921483</item>		<item>-77021110</item>
+		<item>38921543</item>		<item>-77021117</item>
+		<item>38921543</item>		<item>-77021143</item>
+		<item>38921709</item>		<item>-77021163</item>
+		<item>38921638</item>		<item>-77022001</item>
+		<item>38921438</item>		<item>-77021977</item>
+		<item>38921438</item>		<item>-77021945</item>
+		<item>38921303</item>		<item>-77021928</item>
+		<item>38921322</item>		<item>-77021702</item>
+		<item>38921451</item>		<item>-77021712</item>
+		<item>38921487</item>		<item>-77021341</item>
+		<item>38921411</item>		<item>-77021334</item>
+		<item>38921406</item>		<item>-77021363</item>
+		<item>38921255</item>		<item>-77021347</item>
+		<item>38921253</item>		<item>-77021330</item>
+		<item>38921211</item>		<item>-77021323</item>
+		<item>38921230</item>		<item>-77021114</item>
+	</integer-array >
+	<integer-array name = "Mackey_Building">
+		<item>38921958</item>		<item>-77021331</item>
+		<item>38922147</item>		<item>-77021353</item>
+		<item>38922148</item>		<item>-77021330</item>
+		<item>38922268</item>		<item>-77021347</item>
+		<item>38922217</item>		<item>-77021868</item>
+		<item>38922085</item>		<item>-77021851</item>
+		<item>38922077</item>		<item>-77021868</item>
+		<item>38922009</item>		<item>-77021853</item>
+		<item>38922007</item>		<item>-77021839</item>
+		<item>38921908</item>		<item>-77021827</item>
+		<item>38921958</item>		<item>-77021331</item>
+	</integer-array >
+	<integer-array name = "Douglass_Hall">
+		<item>38923363</item>		<item>-77020637</item>
+		<item>38923468</item>		<item>-77020651</item>
+		<item>38923463</item>		<item>-77020712</item>
+		<item>38923606</item>		<item>-77020738</item>
+		<item>38923617</item>		<item>-77020703</item>
+		<item>38923729</item>		<item>-77020721</item>
+		<item>38923728</item>		<item>-77020754</item>
+		<item>38923877</item>		<item>-77020786</item>
+		<item>38923882</item>		<item>-77020713</item>
+		<item>38923987</item>		<item>-77020737</item>
+		<item>38923935</item>		<item>-77021230</item>
+		<item>38923846</item>		<item>-77021213</item>
+		<item>38923853</item>		<item>-77021012</item>
+		<item>38923439</item>		<item>-77020950</item>
+		<item>38923416</item>		<item>-77021146</item>
+		<item>38923321</item>		<item>-77021118</item>
+		<item>38923363</item>		<item>-77020637</item>
+	</integer-array >
+	<integer-array name = "School_of_Business">
+		<item>38924314</item>		<item>-77021574</item>
+		<item>38924316</item>		<item>-77021639</item>
+		<item>38924345</item>		<item>-77021649</item>
+		<item>38924386</item>		<item>-77021741</item>
+		<item>38924462</item>		<item>-77021767</item>
+		<item>38924559</item>		<item>-77021920</item>
+		<item>38924566</item>		<item>-77022030</item>
+		<item>38924623</item>		<item>-77022134</item>
+		<item>38924657</item>		<item>-77022139</item>
+		<item>38924660</item>		<item>-77022192</item>
+		<item>38924705</item>		<item>-77022196</item>
+		<item>38924692</item>		<item>-77022358</item>
+		<item>38924146</item>		<item>-77022276</item>
+		<item>38924212</item>		<item>-77021557</item>
+		<item>38924314</item>		<item>-77021574</item>
+	</integer-array >
+	<integer-array name = "Carnegie_Hall">
+		<item>38922755</item>		<item>-77020787</item>
+		<item>38922845</item>		<item>-77020795</item>
+		<item>38922848</item>		<item>-77020783</item>
+		<item>38922929</item>		<item>-77020789</item>
+		<item>38922936</item>		<item>-77020808</item>
+		<item>38923025</item>		<item>-77020818</item>
+		<item>38923013</item>		<item>-77020994</item>
+		<item>38922922</item>		<item>-77020987</item>
+		<item>38922915</item>		<item>-77021027</item>
+		<item>38922825</item>		<item>-77021007</item>
+		<item>38922817</item>		<item>-77020968</item>
+		<item>38922733</item>		<item>-77020956</item>
+		<item>38922755</item>		<item>-77020787</item>
+	</integer-array >
+	<integer-array name = "Drew_Hall">
+		<item>38927007</item>		<item>-77021025</item>
+		<item>38927251</item>		<item>-77021057</item>
+		<item>38927272</item>		<item>-77020858</item>
+		<item>38927235</item>		<item>-77020848</item>
+		<item>38927239</item>		<item>-77020783</item>
+		<item>38927038</item>		<item>-77020750</item>
+		<item>38927053</item>		<item>-77020598</item>
+		<item>38927419</item>		<item>-77020652</item>
+		<item>38927363</item>		<item>-77021241</item>
+		<item>38926994</item>		<item>-77021181</item>
+		<item>38927007</item>		<item>-77021025</item>
+	</integer-array >
+	<integer-array name = "Cook_Hall">
+		<item>38925068</item>		<item>-77021466</item>
+		<item>38925724</item>		<item>-77021566</item>
+		<item>38925828</item>		<item>-77021576</item>
+		<item>38925787</item>		<item>-77022071</item>
+		<item>38925676</item>		<item>-77022060</item>
+		<item>38925439</item>		<item>-77022022</item>
+		<item>38925426</item>		<item>-77022049</item>
+		<item>38925322</item>		<item>-77022026</item>
+		<item>38925332</item>		<item>-77022005</item>
+		<item>38925020</item>		<item>-77021951</item>
+		<item>38925068</item>		<item>-77021466</item>
+	</integer-array >
+	<integer-array name = "East_Towers_Plaza">
+		<item>38920191</item>		<item>-77023259</item>
+		<item>38920763</item>		<item>-77023331</item>
+		<item>38920712</item>		<item>-77023854</item>
+		<item>38920644</item>		<item>-77023846</item>
+		<item>38920640</item>		<item>-77023789</item>
+		<item>38920579</item>		<item>-77023784</item>
+		<item>38920588</item>		<item>-77023756</item>
+		<item>38920570</item>		<item>-77023756</item>
+		<item>38920588</item>		<item>-77023513</item>
+		<item>38920331</item>		<item>-77023482</item>
+		<item>38920303</item>		<item>-77023812</item>
+		<item>38920463</item>		<item>-77023835</item>
+		<item>38920465</item>		<item>-77023863</item>
+		<item>38920485</item>		<item>-77023863</item>
+		<item>38920476</item>		<item>-77023944</item>
+		<item>38920515</item>		<item>-77023950</item>
+		<item>38920513</item>		<item>-77024034</item>
+		<item>38920154</item>		<item>-77023981</item>
+		<item>38920160</item>		<item>-77023900</item>
+		<item>38920138</item>		<item>-77023883</item>
+		<item>38920191</item>		<item>-77023259</item>
+	</integer-array >
+	<integer-array name = "West_Towers_Plaza">
+		<item>38920602</item>		<item>-77024409</item>
+		<item>38920661</item>		<item>-77024413</item>
+		<item>38920612</item>		<item>-77024936</item>
+		<item>38920469</item>		<item>-77024916</item>
+		<item>38920469</item>		<item>-77024858</item>
+		<item>38920323</item>		<item>-77024833</item>
+		<item>38920304</item>		<item>-77024903</item>
+		<item>38920049</item>		<item>-77024870</item>
+		<item>38920113</item>		<item>-77024232</item>
+		<item>38920126</item>		<item>-77024235</item>
+		<item>38920135</item>		<item>-77024149</item>
+		<item>38920491</item>		<item>-77024190</item>
+		<item>38920509</item>		<item>-77024204</item>
+		<item>38920494</item>		<item>-77024286</item>
+		<item>38920441</item>		<item>-77024289</item>
+		<item>38920432</item>		<item>-77024346</item>
+		<item>38920410</item>		<item>-77024343</item>
+		<item>38920404</item>		<item>-77024386</item>
+		<item>38920252</item>		<item>-77024364</item>
+		<item>38920223</item>		<item>-77024694</item>
+		<item>38920482</item>		<item>-77024723</item>
+		<item>38920511</item>		<item>-77024476</item>
+		<item>38920522</item>		<item>-77024450</item>
+		<item>38920581</item>		<item>-77024452</item>
+		<item>38920602</item>		<item>-77024409</item>
+	</integer-array >
+	<integer-array name = "Health_Science_Library">
+		<item>38919470</item>		<item>-77018885</item>
+		<item>38919500</item>		<item>-77018555</item>
+		<item>38920048</item>		<item>-77018633</item>
+		<item>38920029</item>		<item>-77018810</item>
+		<item>38920022</item>		<item>-77018879</item>
+		<item>38920126</item>		<item>-77018899</item>
+		<item>38920098</item>		<item>-77019047</item>
+		<item>38919705</item>		<item>-77018999</item>
+		<item>38919697</item>		<item>-77018986</item>
+		<item>38919692</item>		<item>-77018999</item>
+		<item>38919684</item>		<item>-77019006</item>
+		<item>38919673</item>		<item>-77019009</item>
+		<item>38919660</item>		<item>-77019009</item>
+		<item>38919649</item>		<item>-77019009</item>
+		<item>38919636</item>		<item>-77019009</item>
+		<item>38919631</item>		<item>-77018996</item>
+		<item>38919623</item>		<item>-77018985</item>
+		<item>38919618</item>		<item>-77018972</item>
+		<item>38919610</item>		<item>-77018962</item>
+		<item>38919610</item>		<item>-77018948</item>
+		<item>38919610</item>		<item>-77018935</item>
+		<item>38919610</item>		<item>-77018921</item>
+		<item>38919612</item>		<item>-77018908</item>
+		<item>38919612</item>		<item>-77018897</item>
+		<item>38919562</item>		<item>-77018857</item>
+		<item>38919554</item>		<item>-77018887</item>
+		<item>38919470</item>		<item>-77018885</item>
+	</integer-array >
+	<integer-array name = "Graduate_Library">
+		<item>38922416</item>		<item>-77020139</item>
+		<item>38922117</item>		<item>-77020089</item>
+		<item>38922119</item>		<item>-77019981</item>
+		<item>38922141</item>		<item>-77019815</item>
+		<item>38922114</item>		<item>-77019803</item>
+		<item>38922142</item>		<item>-77019630</item>
+		<item>38922161</item>		<item>-77019634</item>
+		<item>38922173</item>		<item>-77019449</item>
+		<item>38922149</item>		<item>-77019447</item>
+		<item>38922151</item>		<item>-77019322</item>
+		<item>38922478</item>		<item>-77019368</item>
+		<item>38922416</item>		<item>-77020139</item>
+	</integer-array >
+	<integer-array name = "Undergraduate_Library">
+		<item>38922483</item>		<item>-77019348</item>
+		<item>38922094</item>		<item>-77019291</item>
+		<item>38922083</item>		<item>-77019237</item>
+		<item>38922028</item>		<item>-77019229</item>
+		<item>38922055</item>		<item>-77018848</item>
+		<item>38921987</item>		<item>-77018834</item>
+		<item>38922016</item>		<item>-77018614</item>
+		<item>38922547</item>		<item>-77018697</item>
+		<item>38922483</item>		<item>-77019348</item>
+	</integer-array >
+	<integer-array name = "Thirkield_Hall"><!-- accurate -->
+		<item>38921600</item>		<item>-77020675</item>
+		<item>38921942</item>		<item>-77020726</item>
+		<item>38921926</item>		<item>-77020946</item>
+		<item>38921581</item>		<item>-77020893</item>
+		<item>38921600</item>		<item>-77020675</item>
+	</integer-array >
+	<integer-array name = "Chemical_Engineering_Building">
+		<item>38920939</item>		<item>-77021016</item>
+		<item>38921206</item>		<item>-77021058</item>
+		<item>38921183</item>		<item>-77021243</item>
+		<item>38920917</item>		<item>-77021197</item>
+		<item>38920939</item>		<item>-77021016</item>
+	</integer-array >
+	<integer-array name = "Bunche_Center">
+		<item>38920831</item>		<item>-77020934</item>
+		<item>38920902</item>		<item>-77020956</item>
+		<item>38920881</item>		<item>-77021181</item>
+		<item>38920816</item>		<item>-77021168</item>
+		<item>38920831</item>		<item>-77020934</item>
+	</integer-array >
+	<integer-array name = "Power_Plant">
+		<item>38920170</item>		<item>-77020900</item>
+		<item>38920226</item>		<item>-77020914</item>
+		<item>38920239</item>		<item>-77020873</item>
+		<item>38920441</item>		<item>-77020910</item>
+		<item>38920438</item>		<item>-77020981</item>
+		<item>38920420</item>		<item>-77020967</item>
+		<item>38920388</item>		<item>-77021191</item>
+		<item>38920409</item>		<item>-77021201</item>
+		<item>38920414</item>		<item>-77021259</item>
+		<item>38920401</item>		<item>-77021273</item>
+		<item>38920133</item>		<item>-77021237</item>
+		<item>38920170</item>		<item>-77020900</item>
+	</integer-array >
+	<integer-array name = "Rankin_Chapel">
+		<item>38922346</item>		<item>-77020711</item>
+		<item>38921994</item>		<item>-77020681</item>
+		<item>38922002</item>		<item>-77020498</item>
+		<item>38922032</item>		<item>-77020492</item>
+		<item>38922032</item>		<item>-77020426</item>
+		<item>38922119</item>		<item>-77020432</item>
+		<item>38922111</item>		<item>-77020502</item>
+		<item>38922347</item>		<item>-77020521</item>
+		<item>38922346</item>		<item>-77020711</item>
+	</integer-array >
+	<integer-array name = "Blackburn_Center">
+		<item>38923764</item>		<item>-77018973</item>
+		<item>38923802</item>		<item>-77018966</item>
+		<item>38923817</item>		<item>-77018901</item>
+		<item>38924117</item>		<item>-77018951</item>
+		<item>38924127</item>		<item>-77019008</item>
+		<item>38924421</item>		<item>-77019067</item>
+		<item>38924405</item>		<item>-77019152</item>
+		<item>38924456</item>		<item>-77019162</item>
+		<item>38924439</item>		<item>-77019314</item>
+		<item>38924389</item>		<item>-77019323</item>
+		<item>38924386</item>		<item>-77019407</item>
+		<item>38924089</item>		<item>-77019375</item>
+		<item>38924076</item>		<item>-77019479</item>
+		<item>38923767</item>		<item>-77019447</item>
+		<item>38923771</item>		<item>-77019343</item>
+		<item>38923730</item>		<item>-77019331</item>
+		<item>38923764</item>		<item>-77018973</item>
+	</integer-array >
+	<integer-array name = "Burr_Gymnasium">
+		<item>38925960</item>		<item>-77021753</item>
+		<item>38926066</item>		<item>-77021754</item>
+		<item>38926059</item>		<item>-77021714</item>
+		<item>38926115</item>		<item>-77021698</item>
+		<item>38926140</item>		<item>-77021730</item>
+		<item>38926394</item>		<item>-77021762</item>
+		<item>38926407</item>		<item>-77021655</item>
+		<item>38926771</item>		<item>-77021717</item>
+		<item>38926686</item>		<item>-77022687</item>
+		<item>38926190</item>		<item>-77022624</item>
+		<item>38926205</item>		<item>-77022136</item>
+		<item>38925942</item>		<item>-77022081</item>
+		<item>38925960</item>		<item>-77021753</item>
+	</integer-array >
+	<integer-array name = "Lindsay_Hall">
+		<item>38922682</item>		<item>-77021909</item>
+		<item>38922506</item>		<item>-77021897</item>
+		<item>38922555</item>		<item>-77021367</item>
+		<item>38922735</item>		<item>-77021389</item>
+		<item>38922682</item>		<item>-77021909</item>
+	</integer-array >
+	<integer-array name = "Mordecai_Admin_Building"><!--  accurate -->
+		<item>38922804</item>		<item>-77021630</item>
+		<item>38923169</item>		<item>-77021684</item>
+		<item>38923144</item>		<item>-77021957</item>
+		<item>38923305</item>		<item>-77021984</item>
+		<item>38923361</item>		<item>-77021499</item>
+		<item>38922823</item>		<item>-77021410</item>
+		<item>38922804</item>		<item>-77021630</item>
+	</integer-array >
+	<integer-array name = "Howard_Hall">
+		<item>38922892</item>		<item>-77021769</item>
+		<item>38923042</item>		<item>-77021801</item>
+		<item>38923049</item>		<item>-77021854</item>
+		<item>38923086</item>		<item>-77021870</item>
+		<item>38923069</item>		<item>-77021952</item>
+		<item>38923008</item>		<item>-77021932</item>
+		<item>38922988</item>		<item>-77021971</item>
+		<item>38922934</item>		<item>-77021963</item>
+		<item>38922931</item>		<item>-77021992</item>
+		<item>38922867</item>		<item>-77021976</item>
+		<item>38922876</item>		<item>-77021879</item>
+		<item>38922892</item>		<item>-77021769</item>
+	</integer-array >
+	<integer-array name = "Howard_Manor">
+		<item>38925517</item>		<item>-77022156</item>
+		<item>38925777</item>		<item>-77022200</item>
+		<item>38925753</item>		<item>-77022376</item>
+		<item>38925687</item>		<item>-77022371</item>
+		<item>38925684</item>		<item>-77022339</item>
+		<item>38925619</item>		<item>-77022339</item>
+		<item>38925594</item>		<item>-77022495</item>
+		<item>38925654</item>		<item>-77022528</item>
+		<item>38925679</item>		<item>-77022524</item>
+		<item>38925678</item>		<item>-77022492</item>
+		<item>38925744</item>		<item>-77022505</item>
+		<item>38925726</item>		<item>-77022682</item>
+		<item>38925440</item>		<item>-77022643</item>
+		<item>38925446</item>		<item>-77022549</item>
+		<item>38925480</item>		<item>-77022528</item>
+		<item>38925517</item>		<item>-77022156</item>
+	</integer-array >
+	<integer-array name = "Effingham_Apartments">
+		<item>38925368</item>		<item>-77022104</item>
+		<item>38925467</item>		<item>-77022128</item>
+		<item>38925424</item>		<item>-77022541</item>
+		<item>38925022</item>		<item>-77022490</item>
+		<item>38925033</item>		<item>-77022360</item>
+		<item>38925067</item>		<item>-77022360</item>
+		<item>38925089</item>		<item>-77022065</item>
+		<item>38925176</item>		<item>-77022077</item>
+		<item>38925154</item>		<item>-77022360</item>
+		<item>38925197</item>		<item>-77022375</item>
+		<item>38925232</item>		<item>-77022093</item>
+		<item>38925318</item>		<item>-77022112</item>
+		<item>38925294</item>		<item>-77022359</item>
+		<item>38925325</item>		<item>-77022387</item>
+		<item>38925368</item>		<item>-77022104</item>
+	</integer-array >
+	<string-array name = "Buildings">
+		<item>Engineering_Building</item>
+		<item>Mackey_Building</item>
+		<item>Douglass_Hall</item>
+		<item>School_of_Business</item>
+		<item>Carnegie_Hall</item>
+		<item>Drew_Hall</item>
+		<item>Cook_Hall</item>
+		<item>East_Towers_Plaza</item>
+		<item>West_Towers_Plaza</item>
+		<item>Health_Science_Library</item>
+		<item>Graduate_Library</item>
+		<item>Undergraduate_Library</item>
+		<item>Thirkield_Hall</item>
+		<item>Chemical_Engineering_Building</item>
+		<item>Bunche_Center</item>
+		<item>Power_Plant</item>
+		<item>Rankin_Chapel</item>
+		<item>Blackburn_Center</item>
+		<item>Burr_Gymnasium</item>
+		<item>Lindsay_Hall</item>
+		<item>Mordecai_Admin_Building</item>
+		<item>Howard_Hall</item>
+		<item>Howard_Manor</item>
+		<item>Effingham_Apartments</item>
+	</string-array >
+</resources>
